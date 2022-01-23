@@ -2,7 +2,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  min-width: 100vw;
-  min-height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 5vw;
+  height: 5vw;
+  background-color: white;
+}
+
+svg {
+  position: absolute;
 }
