@@ -15,17 +15,17 @@ window.onload = function () {
 
   gridEl.appendChild(gridFragment);
 
-  anime({
+  var animeGrid = {
     targets: '.grid .square',
     scale: [
       { value: 0, easing: 'easeOutSine', duration: 500 },
       { value: 0.5, easing: 'easeInOutQuad', duration: 250 },
       { value: 0, easing: 'easeOutSine', duration: 250 },
     ],
-    delay: anime.stagger(200, { grid: [GRID_WIDTH, GRID_HEIGHT], from: 'center', direction: 'reverse'})
-  });
+    delay: anime.stagger(200, { grid: [GRID_WIDTH, GRID_HEIGHT], from: 'center', direction: 'reverse' })
+  };
 
-  anime({
+  var animeLogo = {
     targets: 'svg path',
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: 'easeInOutSine',
@@ -33,5 +33,9 @@ window.onload = function () {
     delay: function (el, i) { return i * 250 },
     direction: 'alternate',
     loop: false
-  });
+  };
+
+  var tl = anime.timeline();
+
+  tl.add(animeGrid).add(animeLogo);
 }

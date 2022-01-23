@@ -18,3 +18,7 @@ body {
   height: 5vw;
   background-color: white;
 }
+
+svg {
+  position: absolute;
+}
