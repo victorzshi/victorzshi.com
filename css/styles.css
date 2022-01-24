@@ -12,10 +12,14 @@ body {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .square {
+  border-radius: 1em;
+  background-color: white;
+}
+
+.landscape {
   width: 5vw;
   height: 5vw;
 }
@@ -26,5 +30,9 @@ body {
 }
 
 svg {
+  position: absolute;
+}
+
+a {
   position: absolute;
 }
