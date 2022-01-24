@@ -12,13 +12,17 @@ body {
 .grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .square {
-  border-radius: 1em;
   width: 5vw;
   height: 5vw;
-  background-color: white;
+}
+
+.portrait {
+  width: 5vh;
+  height: 5vh;
 }
 
 svg {
