@@ -37,7 +37,7 @@ window.onload = function () {
 
   gridEl.appendChild(gridFragment);
 
-  const animeGrid = {
+  const staggeringGrid = {
     targets: ".grid .square",
     scale: [
       { value: 0.1, duration: 0 },
@@ -45,32 +45,61 @@ window.onload = function () {
       { value: 0.4, easing: "easeInOutQuad", duration: 250 },
       { value: 0, easing: "easeOutSine", duration: 250 },
     ],
-    delay: anime.stagger(200, {
+    delay: anime.stagger(150, {
       grid: [columns, rows],
       from: "center",
       direction: "reverse",
     }),
   };
 
-  const animeOutlineLogo = {
+  const lineDrawLogo = {
     targets: ".outline-logo path",
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: "easeInOutSine",
-    duration: 3000,
+    duration: 1500,
     delay: function (el, i) {
       return i * 250;
     },
     direction: "alternate",
   };
 
-  const animeFilledLogo = {
+  const fadeInLogo = {
     targets: ".filled-logo path",
     opacity: [0, 1],
     easing: "easeOutSine",
-    duration: 1000,
+    duration: 500,
+  };
+
+  const moveLogo = {
+    targets: [".outline-logo", ".filled-logo"],
+    translateY: {value: -48, duration: 500},
+    easing: "easeOutSine",
+  };
+
+  const fadeInLinkedinIcon = {
+    targets: ".linkedin-icon",
+    translateX: { value: -48, duration: 0 },
+    translateY: 48,
+    opacity: [0, 1],
+    easing: "easeOutSine",
+    duration: 500,
+  };
+
+  const fadeInGithubIcon = {
+    targets: ".github-icon",
+    translateX: { value: 48, duration: 0 },
+    translateY: 48,
+    opacity: [0, 1],
+    easing: "easeOutSine",
+    duration: 500,
   };
 
   const tl = anime.timeline();
 
-  tl.add(animeGrid).add(animeOutlineLogo).add(animeFilledLogo, "-=2000");
+  tl.add(staggeringGrid)
+    .add(lineDrawLogo)
+    .add(fadeInLogo, "-=500")
+    .add(moveLogo)
+    .add(fadeInLinkedinIcon, "-=500")
+    .add(fadeInGithubIcon, "-=500");
 };

@@ -12,7 +12,6 @@ body {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .square {
@@ -31,5 +30,9 @@ body {
 }
 
 svg {
+  position: absolute;
+}
+
+a {
   position: absolute;
 }
