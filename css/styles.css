@@ -16,11 +16,6 @@ body {
 }
 
 .square {
-  border-radius: 1em;
-  background-color: white;
-}
-
-.landscape {
   width: 5vw;
   height: 5vw;
 }
