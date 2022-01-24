@@ -6,8 +6,7 @@ window.onload = function () {
   let rows = 0;
   let columns = 0;
 
-  var gridEl = document.querySelector('.grid');
-  var gridFragment = document.createDocumentFragment();
+  const isLandscape = viewportWidth > viewportHeight ? true : false;
 
   if (isLandscape) {
     columns = MAX_GRID_SIZE;
