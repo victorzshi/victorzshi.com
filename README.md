@@ -1,4 +1,4 @@
-﻿# vzshi.com
+﻿# victorzshi.com
 
 Victor Z. Shi's personal website.
 
