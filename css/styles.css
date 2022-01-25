@@ -2,11 +2,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* TODO: Overflow hidden removes ability to refresh page on mobile, add replay button */
-  overflow: hidden;
+  margin: 0;
   width: 100vw;
   height: 100vh;
   background-color: black;
+  font-family: monospace;
 }
 
 .grid {
@@ -29,10 +29,21 @@ body {
   height: 5vh;
 }
 
-svg {
+.logo {
   position: absolute;
 }
 
-a {
+.outline {
+  stroke: white;
+  fill: none;
+}
+
+.filled {
+  fill: white;
+}
+
+.content {
   position: absolute;
+  text-align: center;
+  color: white;
 }

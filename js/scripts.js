@@ -25,13 +25,7 @@ window.onload = function () {
   for (let i = 0; i < totalElements; i++) {
     const squareEl = document.createElement("div");
     squareEl.classList.add("square");
-
-    if (isLandscape) {
-      squareEl.classList.add("landscape");
-    } else {
-      squareEl.classList.add("portrait");
-    }
-
+    squareEl.classList.add(isLandscape ? "landscape" : "portrait");
     gridFragment.appendChild(squareEl);
   }
 
@@ -53,7 +47,7 @@ window.onload = function () {
   };
 
   const lineDrawLogo = {
-    targets: ".outline-logo path",
+    targets: ".outline path",
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: "easeInOutSine",
     duration: 1500,
@@ -64,31 +58,50 @@ window.onload = function () {
   };
 
   const fadeInLogo = {
-    targets: ".filled-logo path",
+    targets: ".filled",
     opacity: [0, 1],
     easing: "easeOutSine",
     duration: 500,
   };
 
   const moveLogo = {
-    targets: [".outline-logo", ".filled-logo"],
-    translateY: {value: -48, duration: 500},
+    targets: ".logo",
+    translateY: -150,
+    scale: 1.5,
     easing: "easeOutSine",
+    duration: 500,
   };
 
-  const fadeInLinkedinIcon = {
-    targets: ".linkedin-icon",
-    translateX: { value: -48, duration: 0 },
-    translateY: 48,
+  const fadeInLinkedin = {
+    targets: ".linkedin",
+    translateX: -150,
+    scale: 3,
     opacity: [0, 1],
     easing: "easeOutSine",
     duration: 500,
   };
 
-  const fadeInGithubIcon = {
-    targets: ".github-icon",
-    translateX: { value: 48, duration: 0 },
-    translateY: 48,
+  const fadeInGithub = {
+    targets: ".github",
+    scale: 3,
+    opacity: [0, 1],
+    easing: "easeOutSine",
+    duration: 500,
+  };
+
+  const fadeInEmail = {
+    targets: ".email",
+    translateX: 150,
+    scale: 3,
+    opacity: [0, 1],
+    easing: "easeOutSine",
+    duration: 500,
+  };
+
+  const fadeInAbout = {
+    targets: ".about",
+    translateY: 150,
+    scale: 2,
     opacity: [0, 1],
     easing: "easeOutSine",
     duration: 500,
@@ -100,6 +113,8 @@ window.onload = function () {
     .add(lineDrawLogo)
     .add(fadeInLogo, "-=500")
     .add(moveLogo)
-    .add(fadeInLinkedinIcon, "-=500")
-    .add(fadeInGithubIcon, "-=500");
+    .add(fadeInLinkedin, "-=500")
+    .add(fadeInGithub, "-=500")
+    .add(fadeInEmail, "-=500")
+    .add(fadeInAbout, "-=500");
 };
