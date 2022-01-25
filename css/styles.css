@@ -34,16 +34,16 @@ body {
 }
 
 .outline {
-  stroke: white;
+  stroke: black;
   fill: none;
 }
 
 .filled {
-  fill: white;
+  fill: black;
 }
 
 .content {
   position: absolute;
   text-align: center;
-  color: white;
+  color: black;
 }

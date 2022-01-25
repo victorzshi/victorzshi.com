@@ -48,6 +48,7 @@ window.onload = function () {
 
   const lineDrawLogo = {
     targets: ".outline path",
+    stroke: "#fff",
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: "easeInOutSine",
     duration: 1500,
@@ -59,6 +60,7 @@ window.onload = function () {
 
   const fadeInLogo = {
     targets: ".filled",
+    fill: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
     duration: 500,
@@ -76,6 +78,7 @@ window.onload = function () {
     targets: ".linkedin",
     translateX: -150,
     scale: 3,
+    color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
     duration: 500,
@@ -84,6 +87,7 @@ window.onload = function () {
   const fadeInGithub = {
     targets: ".github",
     scale: 3,
+    color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
     duration: 500,
@@ -93,6 +97,7 @@ window.onload = function () {
     targets: ".email",
     translateX: 150,
     scale: 3,
+    color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
     duration: 500,
@@ -102,6 +107,7 @@ window.onload = function () {
     targets: ".about",
     translateY: 150,
     scale: 2,
+    color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
     duration: 500,
