@@ -46,9 +46,14 @@ window.onload = function () {
     }),
   };
 
-  const lineDrawLogo = {
+  const fadeInOutlineLogo = {
+    targets: ".outline",
+    opacity: 1,
+    duration: 0,
+  };
+
+  const lineDrawOutlineLogo = {
     targets: ".outline path",
-    stroke: { value: "#fff", duration: 500 },
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: "easeInOutSine",
     duration: 1500,
@@ -58,12 +63,11 @@ window.onload = function () {
     direction: "alternate",
   };
 
-  const fadeInLogo = {
+  const fadeInFilledLogo = {
     targets: ".filled",
-    fill: "#fff",
-    opacity: [0, 1],
+    opacity: 1,
     easing: "easeInOutSine",
-    duration: 1000,
+    duration: 500,
   };
 
   const moveLogo = {
@@ -77,8 +81,7 @@ window.onload = function () {
     targets: ".linkedin",
     translateX: -100,
     scale: 2,
-    color: "#fff",
-    opacity: [0, 1],
+    opacity: 1,
     easing: "easeOutSine",
     duration: 500,
   };
@@ -86,8 +89,7 @@ window.onload = function () {
   const fadeInGithub = {
     targets: ".github",
     scale: 2,
-    color: "#fff",
-    opacity: [0, 1],
+    opacity: 1,
     easing: "easeOutSine",
     duration: 500,
   };
@@ -96,8 +98,7 @@ window.onload = function () {
     targets: ".twitter",
     translateX: 100,
     scale: 2,
-    color: "#fff",
-    opacity: [0, 1],
+    opacity: 1,
     easing: "easeOutSine",
     duration: 500,
   };
@@ -106,8 +107,7 @@ window.onload = function () {
     targets: ".about",
     translateY: 100,
     scale: 1.5,
-    color: "#fff",
-    opacity: [0, 1],
+    opacity: 1,
     easing: "easeOutSine",
     duration: 500,
   };
@@ -115,8 +115,9 @@ window.onload = function () {
   const tl = anime.timeline();
 
   tl.add(staggeringGrid)
-    .add(lineDrawLogo)
-    .add(fadeInLogo, "-=1000")
+    .add(fadeInOutlineLogo)
+    .add(lineDrawOutlineLogo)
+    .add(fadeInFilledLogo, "-=1000")
     .add(moveLogo, "-=500")
     .add(fadeInLinkedin, "-=500")
     .add(fadeInGithub, "-=500")
