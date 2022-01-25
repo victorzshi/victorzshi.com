@@ -68,16 +68,16 @@ window.onload = function () {
 
   const moveLogo = {
     targets: ".logo",
-    translateY: -150,
-    scale: 1.5,
+    translateY: -100,
+    scale: 0.5,
     easing: "easeOutSine",
     duration: 500,
   };
 
   const fadeInLinkedin = {
     targets: ".linkedin",
-    translateX: -150,
-    scale: 3,
+    translateX: -100,
+    scale: 1.5,
     color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
@@ -86,7 +86,7 @@ window.onload = function () {
 
   const fadeInGithub = {
     targets: ".github",
-    scale: 3,
+    scale: 1.5,
     color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
@@ -95,8 +95,8 @@ window.onload = function () {
 
   const fadeInEmail = {
     targets: ".email",
-    translateX: 150,
-    scale: 3,
+    translateX: 100,
+    scale: 1.5,
     color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
@@ -105,8 +105,8 @@ window.onload = function () {
 
   const fadeInAbout = {
     targets: ".about",
-    translateY: 150,
-    scale: 2,
+    translateY: 100,
+    scale: 1.5,
     color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
