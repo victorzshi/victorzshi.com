@@ -93,8 +93,8 @@ window.onload = function () {
     duration: 500,
   };
 
-  const fadeInEmail = {
-    targets: ".email",
+  const fadeInTwitter = {
+    targets: ".twitter",
     translateX: 100,
     scale: 1.5,
     color: "#fff",
@@ -121,6 +121,6 @@ window.onload = function () {
     .add(moveLogo, "-=500")
     .add(fadeInLinkedin, "-=500")
     .add(fadeInGithub, "-=500")
-    .add(fadeInEmail, "-=500")
+    .add(fadeInTwitter, "-=500")
     .add(fadeInAbout, "-=500");
 };
