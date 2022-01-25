@@ -6,6 +6,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: black;
+  cursor: url('../img/cursor.png'), auto;
   font-family: monospace;
 }
 
@@ -15,7 +16,7 @@ body {
 }
 
 .square {
-  border-radius: 1em;
+  border-radius: 0.5em;
   background-color: white;
 }
 
@@ -42,7 +43,13 @@ body {
   fill: black;
 }
 
-.content {
+.icon {
+  position: absolute;
+  color: black;
+  cursor: url('../img/cursor-click.png'), auto;
+}
+
+.text {
   position: absolute;
   text-align: center;
   color: black;
