@@ -51,7 +51,7 @@ window.onload = function () {
     stroke: "#fff",
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: "easeInOutSine",
-    duration: 1500,
+    duration: 3000,
     delay: function (el, i) {
       return i * 250;
     },
@@ -62,8 +62,8 @@ window.onload = function () {
     targets: ".filled",
     fill: "#fff",
     opacity: [0, 1],
-    easing: "easeOutSine",
-    duration: 500,
+    easing: "easeInOutSine",
+    duration: 1000,
   };
 
   const moveLogo = {
@@ -117,8 +117,8 @@ window.onload = function () {
 
   tl.add(staggeringGrid)
     .add(lineDrawLogo)
-    .add(fadeInLogo, "-=500")
-    .add(moveLogo)
+    .add(fadeInLogo, "-=2000")
+    .add(moveLogo, "-=500")
     .add(fadeInLinkedin, "-=500")
     .add(fadeInGithub, "-=500")
     .add(fadeInEmail, "-=500")
