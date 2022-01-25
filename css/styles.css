@@ -54,3 +54,8 @@ body {
   text-align: center;
   color: black;
 }
+
+.link {
+  color: black;
+  cursor: url('../img/cursor-click.png'), auto;
+}
