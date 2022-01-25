@@ -35,27 +35,32 @@ body {
 }
 
 .outline {
-  stroke: black;
+  opacity: 0;
+  stroke: white;
   fill: none;
 }
 
 .filled {
-  fill: black;
+  opacity: 0;
+  fill: white;
 }
 
 .icon {
   position: absolute;
-  color: black;
+  opacity: 0;
+  color: white;
   cursor: url('../img/cursor-click.png'), auto;
 }
 
 .text {
   position: absolute;
+  opacity: 0;
   text-align: center;
-  color: black;
+  color: white;
 }
 
 .link {
-  color: black;
+  opacity: 0;
+  color: white;
   cursor: url('../img/cursor-click.png'), auto;
 }
