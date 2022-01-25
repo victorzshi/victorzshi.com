@@ -48,10 +48,10 @@ window.onload = function () {
 
   const lineDrawLogo = {
     targets: ".outline path",
-    stroke: "#fff",
+    stroke: { value: "#fff", duration: 500 },
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: "easeInOutSine",
-    duration: 3000,
+    duration: 1500,
     delay: function (el, i) {
       return i * 250;
     },
@@ -69,7 +69,6 @@ window.onload = function () {
   const moveLogo = {
     targets: ".logo",
     translateY: -100,
-    scale: 0.5,
     easing: "easeOutSine",
     duration: 500,
   };
@@ -77,7 +76,7 @@ window.onload = function () {
   const fadeInLinkedin = {
     targets: ".linkedin",
     translateX: -100,
-    scale: 1.5,
+    scale: 2,
     color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
@@ -86,7 +85,7 @@ window.onload = function () {
 
   const fadeInGithub = {
     targets: ".github",
-    scale: 1.5,
+    scale: 2,
     color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
@@ -96,7 +95,7 @@ window.onload = function () {
   const fadeInTwitter = {
     targets: ".twitter",
     translateX: 100,
-    scale: 1.5,
+    scale: 2,
     color: "#fff",
     opacity: [0, 1],
     easing: "easeOutSine",
@@ -117,7 +116,7 @@ window.onload = function () {
 
   tl.add(staggeringGrid)
     .add(lineDrawLogo)
-    .add(fadeInLogo, "-=2000")
+    .add(fadeInLogo, "-=1000")
     .add(moveLogo, "-=500")
     .add(fadeInLinkedin, "-=500")
     .add(fadeInGithub, "-=500")
