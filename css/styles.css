@@ -49,7 +49,6 @@ body {
   position: absolute;
   opacity: 0;
   color: white;
-  cursor: url('../img/cursor-click.png'), auto;
 }
 
 .text {
@@ -62,5 +61,8 @@ body {
 .link {
   opacity: 0;
   color: white;
+}
+
+.clickable {
   cursor: url('../img/cursor-click.png'), auto;
 }
