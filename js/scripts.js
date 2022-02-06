@@ -3,16 +3,17 @@ window.onload = function () {
   const viewportHeight = window.innerHeight;
 
   const MAX_GRID_SIZE = 20;
+  let orientation = '';
   let rows = 0;
   let columns = 0;
 
-  const isLandscape = viewportWidth > viewportHeight ? true : false;
-
-  if (isLandscape) {
+  if (viewportWidth > viewportHeight) {
+    orientation = "landscape";
     columns = MAX_GRID_SIZE;
     const squareHeight = viewportWidth / columns;
     rows = Math.floor(viewportHeight / squareHeight);
   } else {
+    orientation = "portrait";
     rows = MAX_GRID_SIZE;
     const squareWidth = viewportHeight / rows;
     columns = Math.floor(viewportWidth / squareWidth);
@@ -24,8 +25,7 @@ window.onload = function () {
 
   for (let i = 0; i < totalElements; i++) {
     const squareEl = document.createElement("div");
-    squareEl.classList.add("square");
-    squareEl.classList.add(isLandscape ? "landscape" : "portrait");
+    squareEl.classList.add("square", orientation);
     gridFragment.appendChild(squareEl);
   }
 
@@ -34,8 +34,9 @@ window.onload = function () {
   const staggeringGrid = {
     targets: ".grid .square",
     scale: [
-      { value: 0.1, duration: 0 },
-      { value: 0, easing: "easeOutBounce", duration: 500 },
+      { value: 0, duration: 0 },
+      { value: 0.1, duration: 250 },
+      { value: 0, easing: "easeOutBounce", duration: 250 },
       { value: 0.4, easing: "easeInOutQuad", duration: 250 },
       { value: 0, easing: "easeOutSine", duration: 250 },
     ],
@@ -123,4 +124,30 @@ window.onload = function () {
     .add(fadeInGithub, "-=500")
     .add(fadeInTwitter, "-=500")
     .add(fadeInAbout, "-=500");
+
+  // Source code: https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-11.php
+  const randomColor = () => {
+    let n = (Math.random() * 0xfffff * 1000000).toString(16);
+    return "#" + n.slice(0, 6);
+  };
+
+  function wave(color) {
+    return anime({
+      targets: ".grid .square",
+      scale: [
+        { value: 0, duration: 0 },
+        { value: 0.3, easing: "easeOutBounce", duration: 250 },
+        { value: 0.6, easing: "easeInOutQuad", duration: 250 },
+        { value: 0, easing: "easeOutSine", duration: 250 },
+      ],
+      backgroundColor: color,
+      delay: anime.stagger(150, {
+        grid: [columns, rows],
+        from: "center",
+      }),
+      autoplay: false,
+    });
+  }
+
+  document.querySelector("#space-invader").onclick = wave(randomColor).play;
 };
