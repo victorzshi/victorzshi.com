@@ -95,8 +95,8 @@ window.onload = function () {
     duration: 500,
   };
 
-  const fadeInTwitter = {
-    targets: ".twitter",
+  const fadeInInstagram = {
+    targets: ".instagram",
     translateX: 100,
     scale: 2,
     opacity: 1,
@@ -122,7 +122,7 @@ window.onload = function () {
     .add(moveLogo, "-=500")
     .add(fadeInLinkedin, "-=500")
     .add(fadeInGithub, "-=500")
-    .add(fadeInTwitter, "-=500")
+    .add(fadeInInstagram, "-=500")
     .add(fadeInAbout, "-=500");
 
   // Source code: https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-11.php
